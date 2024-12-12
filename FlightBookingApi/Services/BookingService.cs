@@ -15,20 +15,20 @@ namespace FlightBookingApi.Services
 
         public BookingDto CreateBooking(BookingRequestDto bookingRequest)
         {
+
             // Check seat availability
-           
             var flightQuery = "SELECT AvailableSeats, Price FROM Flights WHERE FlightId = @FlightId";
             var flight = _dbConnection.QueryFirstOrDefault<FlightDto>(flightQuery, new { bookingRequest.FlightId });
 
             if (flight == null || flight.AvailableSeats < bookingRequest.SeatCount)
                 throw new Exception("Insufficient seats available");
 
-            // Update available seats
 
+            // Update available seats
             var updateSeatsQuery = "UPDATE Flights SET AvailableSeats = AvailableSeats - @SeatCount WHERE FlightId = @FlightId";
             _dbConnection.Execute(updateSeatsQuery, new { bookingRequest.SeatCount, bookingRequest.FlightId });
-            // Insert booking
 
+            // Insert booking
             var bookingQuery = @"
             INSERT INTO Bookings (UserId, FlightId, SeatCount, TotalAmount)
             OUTPUT INSERTED.BookingId
