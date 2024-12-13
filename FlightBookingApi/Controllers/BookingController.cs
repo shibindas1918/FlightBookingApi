@@ -1,5 +1,5 @@
-﻿using FlightBookingApi.Models;
-using FlightBookingApi.Services;
+﻿using FlightBookingApi.Interfaces;
+using FlightBookingApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

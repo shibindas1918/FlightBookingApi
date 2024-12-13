@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using FlightBookingApi.Interfaces;
 using FlightBookingApi.Models;
 using System.Data;
 
@@ -52,6 +53,7 @@ namespace FlightBookingApi.Services
                 TotalAmount = totalAmount
             };
         }
+        
 
         public List<BookingDto> GetUserBookings(int userId)
         {

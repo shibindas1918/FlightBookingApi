@@ -1,10 +1,11 @@
 ﻿using Dapper;
+using FlightBookingApi.Interfaces;
 using FlightBookingApi.Models;
 using System.Data;
 
 namespace FlightBookingApi.Services
 {
-   public class AdminService : IAdminService
+    public class AdminService : IAdminService
 {
     private readonly IDbConnection _dbConnection;
 

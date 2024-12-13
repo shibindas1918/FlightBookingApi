@@ -1,6 +1,6 @@
 ﻿using FlightBookingApi.Models;
 
-namespace FlightBookingApi.Services
+namespace FlightBookingApi.Interfaces
 {
     public interface IBookingService
     {
