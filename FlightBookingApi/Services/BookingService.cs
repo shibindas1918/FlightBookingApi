@@ -25,7 +25,7 @@ namespace FlightBookingApi.Services
                 throw new Exception("Insufficient seats available");
 
 
-            // Update available seats
+            // Update available seats in the flight 
             var updateSeatsQuery = "UPDATE Flights SET AvailableSeats = AvailableSeats - @SeatCount WHERE FlightId = @FlightId";
             _dbConnection.Execute(updateSeatsQuery, new { bookingRequest.SeatCount, bookingRequest.FlightId });
 
