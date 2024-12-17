@@ -12,9 +12,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Dependency Registrations for potential services 
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+
+ // Connection String Registrations 
 builder.Services.AddScoped<IDbConnection>(db =>
       new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
