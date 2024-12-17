@@ -18,7 +18,7 @@ builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 
- // Connection String Registrations 
+//Connection String Registrations 
 builder.Services.AddScoped<IDbConnection>(db =>
       new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
