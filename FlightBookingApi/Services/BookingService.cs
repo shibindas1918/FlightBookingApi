@@ -16,7 +16,7 @@ namespace FlightBookingApi.Services
 
         public BookingDto CreateBooking(BookingRequestDto bookingRequest)
         {
-            // Check seat availability
+            // Check Seat Availability
             var flightQuery = "SELECT AvailableSeats, Price FROM Flights WHERE FlightId = @FlightId";
             var flight = _dbConnection.QueryFirstOrDefault<FlightDto>(flightQuery, new { bookingRequest.FlightId });
 
