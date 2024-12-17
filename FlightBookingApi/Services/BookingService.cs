@@ -27,7 +27,7 @@ namespace FlightBookingApi.Services
             var updateSeatsQuery = "UPDATE Flights SET AvailableSeats = AvailableSeats - @SeatCount WHERE FlightId = @FlightId";
             _dbConnection.Execute(updateSeatsQuery, new { bookingRequest.SeatCount, bookingRequest.FlightId });
 
-            // Insert booking seats 
+            // Insert booking seat 
             var bookingQuery = @"
             INSERT INTO Bookings (UserId, FlightId, SeatCount, TotalAmount)
             OUTPUT INSERTED.BookingId
