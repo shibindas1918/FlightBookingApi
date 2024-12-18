@@ -13,7 +13,7 @@ namespace FlightBookingApi.Services
     {
         _dbConnection = dbConnection;
     }
-
+// Method to create add a flight details 
     public void AddFlight(Flight flight)
     {
         var query = @"
@@ -22,7 +22,7 @@ namespace FlightBookingApi.Services
 
         _dbConnection.Execute(query, flight);
     }
-
+//Method to update a particular flight details 
     public void UpdateFlight(Flight flight)
     {
         var query = @"
@@ -34,7 +34,7 @@ namespace FlightBookingApi.Services
 
         _dbConnection.Execute(query, flight);
     }
-
+//Method to delete a particular flight details 
     public void DeleteFlight(int flightId)
     {
         var query = "DELETE FROM Flights WHERE FlightId = @FlightId";
